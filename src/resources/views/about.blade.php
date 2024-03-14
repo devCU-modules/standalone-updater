@@ -31,7 +31,7 @@
 <div class="container pl-5 pr-5">
 
     <div class="about-new-version-block">
-        <h1>Microweber {{MW_VERSION}}</h1>
+        <h1>Laralips {{MW_VERSION}}</h1>
         <h3>Drag and drop website builder.</h3>
     </div>
 
