@@ -17,7 +17,7 @@
 <div class="js-standalone-updater-dashboard-notice card border-primary mb-3 p-3">
     <div class="card-body">
         <h2 class="card-title font-weight-bold"><?php _e('New version is available'); ?>!</h2>
-        <p class="card-text"><?php _e('Current version'); ?> (<span class="font-weight-bold"><?php echo MW_VERSION; ?></span>)</p>
+        <p class="card-text"><?php _e('Current version'); ?> (<span class="font-weight-bold"><?php echo LL_VERSION; ?></span>)</p>
         <p class="card-text"><?php _e('There is a new version'); ?> (<span class="font-weight-bold"><?php echo $params['new-version']; ?></span>) <?php _e('available, do you want to update now?') ?></p>
 
         <br />
