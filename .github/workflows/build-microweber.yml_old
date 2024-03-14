@@ -5,11 +5,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          rm -rf ./microweber-builds/dev
-          mkdir ./microweber-builds/dev
-          cd ./microweber-builds/dev/
+          rm -rf ./laralips-builds/dev
+          mkdir ./laralips-builds/dev
+          cd ./laralips-builds/dev/
           git clone https://github.com/microweber/microweber.git
-          cd ./microweber
+          cd ./laralips
           git checkout dev
           composer install
           rm -rf .git
@@ -17,6 +17,6 @@ jobs:
           zip -r latest-dev.zip `ls`
           mv latest-dev.zip ../../latest-dev.zip
       - run: |
-          curl -T ./microweber-builds/latest-dev.zip ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }}
+          curl -T ./laralips-builds/latest-dev.zip ftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_HOST }}
       - run: |
-          rm -rf ./microweber-builds/dev
+          rm -rf ./laralips-builds/dev
