@@ -10,7 +10,7 @@
 Route::name('standalone-updater.')
     ->prefix(ADMIN_PREFIX . '/standalone-updater')
     ->middleware(['admin'])
-    ->namespace('MicroweberPackages\Modules\StandaloneUpdater\Http\Controllers')
+    ->namespace('Laralips\Modules\StandaloneUpdater\Http\Controllers')
     ->group(function () {
 
         Route::get('about-new-version', 'StandaloneUpdaterController@aboutNewVersion')->name('about-new-version');
@@ -20,7 +20,7 @@ Route::name('standalone-updater.')
 Route::name('api.standalone-updater.')
     ->prefix('api/standalone-updater')
     ->middleware(['api', 'admin'])
-    ->namespace('MicroweberPackages\Modules\StandaloneUpdater\Http\Controllers')
+    ->namespace('Laralips\Modules\StandaloneUpdater\Http\Controllers')
     ->group(function () {
 
         Route::get('delete-temp', 'StandaloneUpdaterController@deleteTemp')->name('delete-temp');
