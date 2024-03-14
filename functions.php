@@ -7,7 +7,7 @@ autoload_add_namespace(__DIR__ . '/src/', 'Laralips\\Modules\\StandaloneUpdater\
 function mw_standalone_updater_get_latest_version()
 {
     return cache()->remember('standalone_updater_latest_version', 1440, function () {
-        $updateApi = 'http://updater.microweberapi.com/builds/master/version.txt';
+        $updateApi = 'https://updates.devcu.com/laralips/builds/version.txt';
         $version = app()->url_manager->download($updateApi);
         if ($version) {
             $version = trim($version);
@@ -18,7 +18,7 @@ function mw_standalone_updater_get_latest_version()
 function mw_standalone_updater_get_latest_composer_json()
 {
     return cache()->remember('standalone_updater_latest_version_composer_json', 1440, function () {
-        $updateApi = 'http://updater.microweberapi.com/builds/master/composer.json';
+        $updateApi = 'https://updates.devcu.com/laralips/builds/composer.json';
         $json = app()->url_manager->download($updateApi);
         if ($json) {
             $json = @json_decode($json,true);
@@ -28,7 +28,7 @@ function mw_standalone_updater_get_latest_composer_json()
 }
 function mw_standalone_updater_has_curl_errors()
 {
-    $requestUrl = 'http://updater.microweberapi.com/builds/master/composer.json';
+    $requestUrl = 'https://updates.devcu.com/laralips/builds/composer.json';
 
     $ch = curl_init($requestUrl);
     curl_setopt($ch, CURLOPT_COOKIEJAR, mw_cache_path() . 'global/cookie.txt');
