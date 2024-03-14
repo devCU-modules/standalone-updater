@@ -1,15 +1,15 @@
 <?php
 /*
- * This file is part of the Microweber framework.
+ * This file is part of the Laralips framework.
  *
- * (c) Microweber CMS LTD
+ * (c) Laralips CMS LTD
  *
  * For full license information see
- * https://github.com/microweber/microweber/blob/master/LICENSE
+ * https://github.com/laralips/laralips/blob/master/LICENSE
  *
  */
 
-namespace MicroweberPackages\Modules\StandaloneUpdater;
+namespace Laralips\Modules\StandaloneUpdater;
 
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
