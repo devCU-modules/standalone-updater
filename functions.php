@@ -35,7 +35,7 @@ function mw_standalone_updater_has_curl_errors()
     curl_setopt($ch, CURLOPT_COOKIEFILE, mw_cache_path() . 'global/cookie.txt');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 5.01; Microweber ' . MW_VERSION . ';)');
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 5.01; Microweber ' . LL_VERSION . ';)');
 
     curl_setopt($ch, CURLOPT_HTTP_VERSION , CURL_HTTP_VERSION_1_1);
     curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
@@ -124,13 +124,13 @@ event_bind('mw.admin', function ($params = false) {
             $newVersionNumber = mw_standalone_updater_get_latest_version();
 
 
-            if (Comparator::equalTo($newVersionNumber, MW_VERSION)) {
+            if (Comparator::equalTo($newVersionNumber, LL_VERSION)) {
                 save_option('last_update_check_time', \Carbon\Carbon::parse('+24 hours'), 'standalone-updater');
                 return;
             }
 
             $mustUpdate = false;
-            if (Comparator::greaterThan($newVersionNumber, MW_VERSION)) {
+            if (Comparator::greaterThan($newVersionNumber, LL_VERSION)) {
                 $mustUpdate = true;
             }
 
