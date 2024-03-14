@@ -15,10 +15,10 @@ $config['version'] = '5.4';
 $config['settings']['autoload_namespace'] = [
     [
         'path' => __DIR__ . '/src/',
-        'namespace' => 'MicroweberPackages\\Modules\\StandaloneUpdater'
+        'namespace' => 'Laralips\\Modules\\StandaloneUpdater'
     ],
 ];
 
 $config['settings']['service_provider'] = [
-    \MicroweberPackages\Modules\StandaloneUpdater\StandaloneUpdaterServiceProvider::class
+    \Laralips\Modules\StandaloneUpdater\StandaloneUpdaterServiceProvider::class
 ];
