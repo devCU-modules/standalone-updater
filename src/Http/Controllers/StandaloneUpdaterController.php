@@ -1,10 +1,10 @@
 <?php
 
-namespace MicroweberPackages\Modules\StandaloneUpdater\Http\Controllers;
+namespace Laralips\Modules\StandaloneUpdater\Http\Controllers;
 
 use GrahamCampbell\Markdown\Facades\Markdown;
 
-class StandaloneUpdaterController extends \MicroweberPackages\Admin\Http\Controllers\AdminController
+class StandaloneUpdaterController extends \Laralips\Admin\Http\Controllers\AdminController
 {
     public function aboutNewVersion()
     {
@@ -25,9 +25,9 @@ class StandaloneUpdaterController extends \MicroweberPackages\Admin\Http\Control
     public function prepareUpdateTempFolder()
     {
         $updateCacheFolderName = 'standalone-update' . DS . rand(222, 444) . time() . DS;
-        $updateCacheDir = userfiles_path() . $updateCacheFolderName;
+        $updateCacheDir = assets_path() . $updateCacheFolderName;
 
-        mw_standalone_updater_delete_recursive(userfiles_path() . 'standalone-update');
+        mw_standalone_updater_delete_recursive(assets_path() . 'standalone-update');
         mkdir_recursive($updateCacheDir);
 
         $bootstrap_cached_folder = normalize_path(base_path('bootstrap/cache/'), true);
@@ -76,7 +76,7 @@ class StandaloneUpdaterController extends \MicroweberPackages\Admin\Http\Control
         $updateCacheFolderName = $this->prepareUpdateTempFolder();
 
 
-        $redirectLink = site_url() . 'userfiles/' . $updateCacheFolderName . 'index.php?installVersion=' . $installVersion;
+        $redirectLink = site_url() . 'assets/' . $updateCacheFolderName . 'index.php?installVersion=' . $installVersion;
 
 
         if ($updateCacheFolderName) {
@@ -88,7 +88,7 @@ class StandaloneUpdaterController extends \MicroweberPackages\Admin\Http\Control
 
     public function deleteTemp()
     {
-        $path = userfiles_path() . 'standalone-update';
+        $path = assets_path() . 'standalone-update';
         if (!is_dir($path)) {
             return false;
         }
@@ -110,7 +110,7 @@ class StandaloneUpdaterController extends \MicroweberPackages\Admin\Http\Control
             return;
         }
         $folderName = $this->prepareUpdateTempFolder();
-        $folder = userfiles_path() . $folderName;
+        $folder = assets_path() . $folderName;
 
         $_REQUEST['format'] = 'json';
 
