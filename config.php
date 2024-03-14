@@ -1,7 +1,7 @@
 <?php
 $config = array();
 $config['name'] = "Standalone Updater";
-$config['author'] = "bobi@microweber.com";
+$config['author'] = "gary@devcu.com";
 $config['no_cache'] = false;
 $config['ui'] = false;
 $config['ui_admin'] = true;
