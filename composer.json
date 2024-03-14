@@ -1,17 +1,17 @@
 {
-  "name": "microweber-modules/standalone-updater",
+  "name": "devcu-modules/standalone-updater",
   "description": "Standalone Updater",
   "license": "MIT",
-  "homepage": "https://microweber.org/modules/microweber-modules/standalone-updater",
+  "homepage": "https://devcu.com",
   "authors": [
     {
-      "name": "Bozhidar Slaveykov",
-      "email": "bobi@microweber.com"
+      "name": "Gary Cornell",
+      "email": "gary@devcu.com"
     }
   ],
   "keywords": [
     "standalone-updater"
   ],
-  "type": "microweber-module",
+  "type": "devcu-module",
   "target-dir": "standalone-updater"
 }
