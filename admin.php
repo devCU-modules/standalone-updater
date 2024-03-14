@@ -1,7 +1,7 @@
 <?php must_have_access(); ?>
 
 <?php
-$currentVersion = MW_VERSION;
+$currentVersion = LL_VERSION;
 $currentPHPVersion = PHP_VERSION;
 $latestVersion = mw_standalone_updater_get_latest_version();
 $latestVersionComposerJson = mw_standalone_updater_get_latest_composer_json();
